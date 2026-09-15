@@ -37,7 +37,7 @@ export class MainTabCommandsSettingTab extends PluginSettingTab {
 				desc: 'How many previously focused tabs to remember.',
 				visible: () => this.getControlValue('focusAfterCloseTab') === 'previous_tab',
 				control: {
-					type: 'slider',
+					type: 'number',
 					key: 'previousTabHistoryLength',
 					min: 1,
 					max: 100,
