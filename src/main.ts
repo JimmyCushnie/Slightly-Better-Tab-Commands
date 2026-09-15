@@ -25,7 +25,8 @@ export default class MainTabCommands extends Plugin {
 				this.mostRecentlyFocusedTabs.push(leaf);
 
 				// If history got too long, trim it.
-				const maxHistory = this.settings.previousTabHistoryLength;
+				// mostRecentlyFocusedTabs includes the currently focused tab, hence the +1.
+				const maxHistory = this.settings.previousTabHistoryLength + 1;
 				if (this.mostRecentlyFocusedTabs.length > maxHistory) {
 					this.mostRecentlyFocusedTabs.splice(0, this.mostRecentlyFocusedTabs.length - maxHistory);
 				}
